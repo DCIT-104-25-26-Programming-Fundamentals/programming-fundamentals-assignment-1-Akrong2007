@@ -120,7 +120,7 @@ def delete_task(tasks):
     removed = tasks.pop(choice - 1)
     print(f'Task "{removed}" has been removed.')
 
-    def print_menu():
+def print_menu():
     print("============================")
     print("     TO-DO LIST MENU")
     print("============================")
@@ -128,7 +128,7 @@ def delete_task(tasks):
     print("2. View tasks")
     print("3. Delete task")
     print("4. Quit")
-
+   
 def main():
     tasks = []
 
@@ -151,4 +151,4 @@ def main():
         print()  # blank line for readability between menu cycles
 
         if __name__ == "__main__":
-    main()
+            main()
