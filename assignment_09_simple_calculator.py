@@ -137,7 +137,7 @@ def main():
             print("Goodbye!")
             break
 
-         if choice not in operations:
+        if choice not in operations:
             print("Error: invalid choice. Please select a number from 1 to 7.")
             print()
             continue
@@ -154,7 +154,7 @@ def main():
             print()
             continue
 
- try:
+        try:
             result = operation(a, b)
             print(f"Result: {format_number(a)} {symbol} {format_number(b)} = {format_number(result)}")
         except ValueError as e:
@@ -165,4 +165,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-        
