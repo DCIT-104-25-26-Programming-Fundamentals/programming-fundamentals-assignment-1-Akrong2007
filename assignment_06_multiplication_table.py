@@ -81,3 +81,23 @@ def get_positive_int(prompt):
         return None
 
     return value
+
+
+def main():
+    # Part A
+    num = get_positive_int("Enter a number: ")
+    if num is None:
+        return
+    print_single_table(num)
+
+    print()
+
+    # Part B
+    n = get_positive_int("Enter N (tables from 1 to N): ")
+    if n is None:
+        return
+    print_tables_up_to_n(n)
+
+
+if __name__ == "__main__":
+    main()
