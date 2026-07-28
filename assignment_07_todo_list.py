@@ -79,3 +79,52 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def add_task(tasks):
+    """Prompt for a task description and add it to the list."""
+    task = input("Enter task: ").strip()
+    if task == "":
+        print("Error: task cannot be empty.")
+        return
+    tasks.append(task)
+    print(f'Task added: "{task}"')
+
+
+def view_tasks(tasks):
+    """Display all tasks, numbered from 1. Show a message if empty."""
+    if not tasks:
+        print("Your to-do list is empty. Add a task to get started!")
+        return
+
+    print("Your Tasks:")
+    for i, task in enumerate(tasks, start=1):
+        print(f"{i}. {task}")
+
+def delete_task(tasks):
+    """Show tasks, ask which number to remove, then remove it."""
+    if not tasks:
+        print("Your to-do list is empty. Nothing to delete.")
+        return
+
+    view_tasks(tasks)
+
+    try:
+        choice = int(input("Enter task number to delete: "))
+    except ValueError:
+        print("Error: please enter a valid number.")
+        return
+
+    if choice < 1 or choice > len(tasks):
+        print("Error: invalid task number.")
+        return
+
+    removed = tasks.pop(choice - 1)
+    print(f'Task "{removed}" has been removed.')
+
+    def print_menu():
+    print("============================")
+    print("     TO-DO LIST MENU")
+    print("============================")
+    print("1. Add task")
+    print("2. View tasks")
+    print("3. Delete task")
+    print("4. Quit")
