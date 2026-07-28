@@ -95,3 +95,13 @@ def check_fibonacci_number():
         print(f"{num} is a Fibonacci number.")
     else:
      print(f"{num} is NOT a Fibonacci number.")
+
+
+def main():
+    print_fibonacci_terms()
+    print()
+    check_fibonacci_number()
+
+
+if __name__ == "__main__":
+    main()
