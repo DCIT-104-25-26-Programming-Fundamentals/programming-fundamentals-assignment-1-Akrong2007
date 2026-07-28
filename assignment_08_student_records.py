@@ -106,7 +106,7 @@ def add_student(students):
             print(f"Error: a student with ID {student_id} already exists.")
             return
 
-         try:
+    try:
         num_scores = int(input("How many scores? "))
     except ValueError:
         print("Error: please enter a valid number.")
@@ -154,7 +154,7 @@ def display_all_students(students):
 
     print("-" * 50)
 
-    def find_student_average(students):
+def find_student_average(students):
     """Look up a student by ID and display their average score."""
     try:
         student_id = int(input("Enter student ID: "))
@@ -170,6 +170,7 @@ def display_all_students(students):
 
     print(f"Error: no student found with ID {student_id}.")
 
+
 def print_menu():
     print("================================")
     print("   STUDENT RECORD SYSTEM MENU")
@@ -178,3 +179,29 @@ def print_menu():
     print("2. Display all students")
     print("3. Calculate average score")
     print("4. Quit")
+
+
+def main():
+    students = []
+
+    while True:
+        print_menu()
+        choice = input("Enter your choice (1-4): ").strip()
+
+        if choice == "1":
+            add_student(students)
+        elif choice == "2":
+            display_all_students(students)
+        elif choice == "3":
+            find_student_average(students)
+        elif choice == "4":
+            print("Goodbye!")
+            break
+        else:
+            print("Error: invalid choice. Please enter a number from 1 to 4.")
+
+        print()  # blank line for readability between menu cycles
+
+
+if __name__ == "__main__":
+    main()   

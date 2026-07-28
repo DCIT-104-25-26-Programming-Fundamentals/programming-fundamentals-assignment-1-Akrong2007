@@ -118,3 +118,51 @@ def print_menu():
 def format_number(n):
     """Print whole numbers without a trailing .0 (e.g. 13 instead of 13.0)."""
     return str(int(n)) if n == int(n) else str(n)
+
+def main():
+    operations = {
+        "1": ("+", add),
+        "2": ("-", subtract),
+        "3": ("*", multiply),
+        "4": ("/", divide),
+        "5": ("%", modulus),
+        "6": ("**", exponentiate),
+    }
+
+    while True:
+        print_menu()
+        choice = input("Select an operation (1-7): ").strip()
+
+        if choice == "7":
+            print("Goodbye!")
+            break
+
+         if choice not in operations:
+            print("Error: invalid choice. Please select a number from 1 to 7.")
+            print()
+            continue
+
+        symbol, operation = operations[choice]
+
+        a = get_number("Enter first number : ")
+        if a is None:
+            print()
+            continue
+
+        b = get_number("Enter second number: ")
+        if b is None:
+            print()
+            continue
+
+ try:
+            result = operation(a, b)
+            print(f"Result: {format_number(a)} {symbol} {format_number(b)} = {format_number(result)}")
+        except ValueError as e:
+            print(f"Error: {e}")
+
+        print()  # blank line for readability between menu cycles
+
+
+if __name__ == "__main__":
+    main()
+        
