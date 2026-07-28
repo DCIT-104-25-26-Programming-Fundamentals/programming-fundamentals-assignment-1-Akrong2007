@@ -105,3 +105,30 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    def print_single_table(num):
+    """Part A — Print the multiplication table for a single number, 1 to 12."""
+    print(f"Multiplication Table for {num}:")
+    for i in range(1, 13):
+        print(f"{num}  x  {i:<2} =  {num * i}")
+
+
+def print_tables_up_to_n(n):
+    """Part B — Print multiplication tables for every number from 1 to N."""
+    for num in range(1, n + 1):
+        print_single_table(num)
+        print("-" * 29)
+
+def get_positive_int(prompt):
+    """Helper — ask for input and validate it's a positive integer."""
+    try:
+        value = int(input(prompt))
+    except ValueError:
+        print("Error: please enter a valid integer.")
+        return None
+
+    if value <= 0:
+        print("Error: the number must be a positive integer.")
+        return None
+
+    return value
