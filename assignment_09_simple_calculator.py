@@ -68,3 +68,53 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def add(a, b):
+    return a + b
+
+
+def subtract(a, b):
+    return a - b
+
+
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Cannot divide by zero.")
+    return round(a / b, 2)
+
+
+def modulus(a, b):
+    if b == 0:
+        raise ValueError("Cannot divide by zero.")
+    return a % b
+
+def exponentiate(a, b):
+    return a ** b
+
+
+def get_number(prompt):
+    """Ask for a number, re-prompting isn't required, just validate once."""
+    try:
+        return float(input(prompt))
+    except ValueError:
+        print("Error: please enter a valid number.")
+        return None
+
+def print_menu():
+    print("============================")
+    print("     SIMPLE CALCULATOR")
+    print("============================")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Modulus")
+    print("6. Exponentiation")
+    print("7. Quit")
+
+def format_number(n):
+    """Print whole numbers without a trailing .0 (e.g. 13 instead of 13.0)."""
+    return str(int(n)) if n == int(n) else str(n)
